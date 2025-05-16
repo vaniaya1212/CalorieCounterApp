@@ -1,12 +1,34 @@
 ﻿<Window x:Class="CalorieCounterApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CalorieCounterApp"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Calorie Counter" Height="500" Width="800">
+    <Grid Margin="10">
+
+        <TextBox x:Name="ProductNameBox" Width="200" Height="30" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" PlaceholderText="Назва продукту"/>
+        <TextBox x:Name="CaloriesBox" Width="100" Height="30" Margin="220,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" PlaceholderText="Ккал"/>
+        <TextBox x:Name="CategoryBox" Width="150" Height="30" Margin="330,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" PlaceholderText="Категорія"/>
+        <Button Content="Додати" Width="100" Height="30" Margin="490,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="AddProduct_Click"/>
+
+        <ComboBox x:Name="GoalBox" Width="150" Height="30" Margin="610,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ComboBoxItem Content="Зменшити вагу"/>
+            <ComboBoxItem Content="Зберегти вагу"/>
+            <ComboBoxItem Content="Збільшити вагу"/>
+        </ComboBox>
+        <Button Content="Обчислити норму" Width="150" Height="30" Margin="610,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="CalculateGoal_Click"/>
+
+        <ListView x:Name="ProductList" Margin="10,90,10,90">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Назва" Width="200" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Калорії" Width="100" DisplayMemberBinding="{Binding Calories}"/>
+                    <GridViewColumn Header="Категорія" Width="150" DisplayMemberBinding="{Binding Category}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Content="Видалити" Width="100" Height="30" Margin="10,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="DeleteProduct_Click"/>
+        <Button Content="Редагувати" Width="100" Height="30" Margin="120,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="EditProduct_Click"/>
+        <Button Content="Зберегти" Width="100" Height="30" Margin="230,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="SaveProducts_Click"/>
+        <Button Content="Порахувати всі калорії" Width="150" Height="30" Margin="340,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="CalculateTotalCalories_Click"/>
     </Grid>
 </Window>
