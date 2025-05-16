@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 namespace CalorieCounterApp
 {
     public class Product
-{
-    public string Name { get; set; }
-    public int Calories { get; set; }
-}
+    {
+        public string Name { get; set; }
+        public int Calories { get; set; }
+        public string Category { get; set; } 
+    }
 }
