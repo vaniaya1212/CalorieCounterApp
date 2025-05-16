@@ -4,9 +4,15 @@
         Title="Calorie Counter" Height="500" Width="800">
     <Grid Margin="10">
 
-        <TextBox x:Name="ProductNameBox" Width="200" Height="30" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" PlaceholderText="Назва продукту"/>
-        <TextBox x:Name="CaloriesBox" Width="100" Height="30" Margin="220,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" PlaceholderText="Ккал"/>
-        <TextBox x:Name="CategoryBox" Width="150" Height="30" Margin="330,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" PlaceholderText="Категорія"/>
+        <TextBlock Text="Назва продукту:" Margin="10, -20, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="ProductNameBox" Width="200" Height="30" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <TextBlock Text="Ккал:" Margin="220, -20, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="CaloriesBox" Width="100" Height="30" Margin="220,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <TextBlock Text="Категорія:" Margin="330, -20, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="CategoryBox" Width="150" Height="30" Margin="330,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
         <Button Content="Додати" Width="100" Height="30" Margin="490,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="AddProduct_Click"/>
 
         <ComboBox x:Name="GoalBox" Width="150" Height="30" Margin="610,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -14,6 +20,7 @@
             <ComboBoxItem Content="Зберегти вагу"/>
             <ComboBoxItem Content="Збільшити вагу"/>
         </ComboBox>
+
         <Button Content="Обчислити норму" Width="150" Height="30" Margin="610,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="CalculateGoal_Click"/>
 
         <ListView x:Name="ProductList" Margin="10,90,10,90">
@@ -30,5 +37,6 @@
         <Button Content="Редагувати" Width="100" Height="30" Margin="120,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="EditProduct_Click"/>
         <Button Content="Зберегти" Width="100" Height="30" Margin="230,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="SaveProducts_Click"/>
         <Button Content="Порахувати всі калорії" Width="150" Height="30" Margin="340,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="CalculateTotalCalories_Click"/>
+
     </Grid>
-</Window>
+    </Window>
